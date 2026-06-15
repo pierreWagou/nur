@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "07pslb9ms4nch07bx0w483mmfxiydn0y6r47l50x0irgl9vjb7sk";
-    aarch64-linux = "012sy0012z4bcykmdadfrca8b7vrx31p0smsdkaqy4m64izrr45g";
-    x86_64-darwin = "0cdn0v6m5djf6bymk3srzcn12qpbfay13xc1knlvcswldp4kmxqc";
-    aarch64-darwin = "12w9il4r50n6f0zsvzb55qfps8iazazz3d2di0hzn7ial22lqpdr";
+    x86_64-linux = "0zck258i44h0rhlss06zp8d0myw9k2c2b9ksvmkdil9yprfwn5bn";
+    aarch64-linux = "06qrxll21zxd4g67x4qarcc5ycs589jx0kqlch9fxg7k1jlc6sw2";
+    x86_64-darwin = "08xl9nzmab845p0hiawcl70xx8icx0h44wkwiryp3hwlkmk3w8y8";
+    aarch64-darwin = "0afk9f9y38d8sp1fymxrd93laqq0pmar7774369hp2gr69b1npsw";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/pierreWagou/lore/releases/download/v0.1.4/lore-linux-amd64.tar.gz";
-    aarch64-linux = "https://github.com/pierreWagou/lore/releases/download/v0.1.4/lore-linux-arm64.tar.gz";
-    x86_64-darwin = "https://github.com/pierreWagou/lore/releases/download/v0.1.4/lore-darwin-amd64.tar.gz";
-    aarch64-darwin = "https://github.com/pierreWagou/lore/releases/download/v0.1.4/lore-darwin-arm64.tar.gz";
+    x86_64-linux = "https://github.com/pierreWagou/lore/releases/download/v0.1.5/lore-linux-amd64.tar.gz";
+    aarch64-linux = "https://github.com/pierreWagou/lore/releases/download/v0.1.5/lore-linux-arm64.tar.gz";
+    x86_64-darwin = "https://github.com/pierreWagou/lore/releases/download/v0.1.5/lore-darwin-amd64.tar.gz";
+    aarch64-darwin = "https://github.com/pierreWagou/lore/releases/download/v0.1.5/lore-darwin-arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "lore";
-  version = "0.1.4";
+  version = "0.1.5";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
